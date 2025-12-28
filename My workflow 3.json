@@ -1,0 +1,173 @@
+{
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "f58b8f82-0566-4965-a570-6e42cb177268",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -272,
+        0
+      ],
+      "id": "1e5bf70d-4f43-4283-bfe6-ba061600eba5",
+      "name": "Webhook",
+      "webhookId": "f58b8f82-0566-4965-a570-6e42cb177268"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        48,
+        16
+      ],
+      "id": "2771be87-1a5d-4bd3-bc79-70202755157a",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "rZKxg1WQE99vNeKz",
+          "name": "wonderhr"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        256,
+        16
+      ],
+      "id": "43897b8c-f269-44c2-84eb-1eacd9b97b7e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        128,
+        224
+      ],
+      "id": "86e4f677-c246-4e22-9380-9c742d194ff0",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Pk4rP5jLghRFLuSV",
+          "name": "Google Gemini(PaLM) Api account abd"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        976,
+        -32
+      ],
+      "id": "dea69ce4-73fa-41f4-9b70-12875a529618",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "addLabels"
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        64
+      ],
+      "id": "e2edeedc-61e0-469d-8a8b-3a2c738f9e97",
+      "name": "Add label to message",
+      "webhookId": "4250d592-1df0-4941-8853-54440f2b35b9",
+      "credentials": {
+        "googleApi": {
+          "id": "bUbPC70tJij034KN",
+          "name": "Google Service Account account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create a row": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Add label to message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add label to message": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "d8f65c8b-588b-4ede-975f-9598f8f18919",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "82a07e25bb5446408550f6d7aab9c641753a0ccd2476c2dc971589d3e32f8cc3"
+  },
+  "id": "6TTCNEcfzu2er97k",
+  "tags": []
+}
