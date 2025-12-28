@@ -28,8 +28,8 @@
       "name": "Create a row",
       "credentials": {
         "supabaseApi": {
-          "id": "rZKxg1WQE99vNeKz",
-          "name": "wonderhr"
+          "id": "L8DXPf1Vpl4idzyu",
+          "name": "ai supply"
         }
       }
     },
@@ -163,7 +163,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "d8f65c8b-588b-4ede-975f-9598f8f18919",
+  "versionId": "a701ffd7-1d26-46b4-9413-cd19524fd3fc",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "82a07e25bb5446408550f6d7aab9c641753a0ccd2476c2dc971589d3e32f8cc3"

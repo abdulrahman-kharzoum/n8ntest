@@ -1,5 +1,5 @@
 {
-  "name": "from merge",
+  "name": "from merge edited",
   "nodes": [
     {
       "parameters": {
@@ -49,8 +49,8 @@
       "name": "Get many rows",
       "credentials": {
         "supabaseApi": {
-          "id": "rZKxg1WQE99vNeKz",
-          "name": "wonderhr"
+          "id": "L8DXPf1Vpl4idzyu",
+          "name": "ai supply"
         }
       }
     },
@@ -70,8 +70,8 @@
       "name": "Execute a SQL query",
       "credentials": {
         "postgres": {
-          "id": "66bFMeDagyhnVXCb",
-          "name": "Postgres account 2"
+          "id": "wAzydSIaJ7EvpyAN",
+          "name": "Postgres account"
         }
       }
     }
@@ -117,7 +117,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "b9ef861e-6a09-4e96-9831-faa7b2d8a13f",
+  "versionId": "c1ffc190-95d9-4d7f-a7dc-216566fab29d",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "82a07e25bb5446408550f6d7aab9c641753a0ccd2476c2dc971589d3e32f8cc3"
